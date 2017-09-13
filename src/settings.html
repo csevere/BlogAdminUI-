@@ -63,7 +63,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1> Post One</h1>
+                    <h1><i class="fa fa-gear"></i> Settings</h1>
                 </div>
             </div>
         </div>
@@ -83,51 +83,95 @@
                         <i class="fa fa-check"></i> Save Changes
                     </a>
                 </div>
-                <div class="col-md-3">
-                    <a href="#" class="btn btn-danger btn-block">
-                        <i class="fa fa-remove"></i> Delete Post
-                    </a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!--POSTS-->
-    <section id="posts">
+    <!--SETTINGS-->
+    <section id="settings">
         <div class="container">
             <div class="row">
                 <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <h4>Edit Post</h4>
+                            <h4>Edit Settings</h4>
                         </div>
                         <div class="card-body">
                             <form>
-                                <div class="form-group">
-                                    <label for="title">Title</label>
-                                    <input type="text" value = "Post One" class="form-control">
+                                <div class="row">  
+                                    <div class="col-md-2">
+                                        <legend>Site Icon  <i data-toggle = "tooltip" data-placement = "top" title = "The Site Icon is used as a browser and app icon for your site. Icons must be square, and at least 512 pixels wide and tall." class="fa fa-info-circle"></i></legend> 
+                                        <a href=""><i class="fa fa-globe text-center"></i></a>
+                                        <button class="btn btn-secondary block">Change</button>
+                                    </div>
+
+                                    <div class="col-md-10">
+                                        <div class = "form-group"> 
+                                            <legend for="site-title">Site Title</legend>
+                                            <input type="text" class="form-control" value = "My Site's Title">
+                                        </div>
+
+                                        <div class = "form-group"> 
+                                            <legend for="site-title">Site Tagline</legend>
+                                            <input type="text" class="form-control" value = "My Site's Tagline">
+                                            <div class="text-muted">In a few words, explain what the site is about.</div>
+                                        </div>
+                                    </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="title">Categories</label>
-                                    <select type="text" value = "Post One" class="form-control">
-                                        <option value="">Web Development</option>
-                                        <option value="">Tech Gadgets</option>
-                                        <option value="">Business</option>
-                                        <option value="">Health & Wellness</option>
-                                    </select>
-                                </div>
+                                <fieldset class="form-group">
+                                    <legend>Allow User Registration</legend>
+                                    <div class="form-check">
+                                        <label class = "form-check-label">
+                                            <input value = "yes" type = "radio" class="form-check-input" checked> Yes
+                                        </label>
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="file">Image Upload</label>
-                                    <input type="file" class = "form-control-file">
-                                    <small class="form-text text-muted">Max Size 3mb</small>
-                                </div>
-        
-                                <div class="form-group">
-                                    <label for="body">Body</label>
-                                    <textarea name = "editor1" class = "form-control">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta veniam dolore esse nam ipsam. Ab nobis incidunt quidem consectetur unde mollitia, itaque fugiat dignissimos illum provident perspiciatis blanditiis ullam ex.</textarea>
-                                </div>
+                                    <div class="form-check">
+                                        <label class = "form-check-label">
+                                            <input value = "no" type = "radio" class="form-check-input"> No
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                    <legend>Homepage Format</legend>
+                                    <div class="form-check">
+                                        <label class = "form-check-label">
+                                            <input value = "post" type = "radio" class="form-check-input" checked> Post Index
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class = "form-check-label">
+                                            <input value = "page" type = "radio" class="form-check-input"> Single Page
+                                        </label>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="form-group">
+                                        <legend>Privacy</legend>
+                                    <div class="form-check">
+                                        <label class = "form-check-label">
+                                            <input value = "public" type = "radio" class="form-check-input" checked> Public
+                                            <div class="text-muted">Your site is available to everyone, and it may be indexed by search engines.</div>
+                                        </label>
+                                    </div>
+    
+                                    <div class="form-check">
+                                        <label class = "form-check-label">
+                                            <input value = "hidden" type = "radio" class="form-check-input"> Hidden
+                                            <div class="text-muted">Your site is available to everyone, but search engines will not index your site.</div>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <label class = "form-check-label">
+                                            <input value = "private" type = "radio" class="form-check-input"> Private
+                                            <div class="text-muted">Your site is only visible to you and users you approve.</div>
+                                        </label>
+                                    </div>
+                                </fieldset>
                             </form>
                         </div>
                     </div>
@@ -156,6 +200,9 @@
     <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace( 'editor1' );
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
     </script>
 </body>
 </html>
