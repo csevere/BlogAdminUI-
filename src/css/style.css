@@ -2,3 +2,11 @@
   font-size: 96px;
   height: 96px;
   width: 96px; }
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    padding-left: 10px; } }
+
+@media (max-width: 576px) {
+  #navbarNav ul li a {
+    padding-left: 10px; } }
